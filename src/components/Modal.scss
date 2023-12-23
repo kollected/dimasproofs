@@ -1,0 +1,34 @@
+.ModalBackdrop {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--dark-grey);
+  opacity: 0.5;
+}
+
+.Modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  inset: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  width: 280px;
+  height: 150px;
+  border: 1px solid var(--primary);
+  border-radius: 1rem;
+  box-shadow: 0.25rem 0.25rem var(--accent);
+  background-color: var(--light-grey);
+
+  .Button {
+    background: var(--light-grey);
+    border: 1px solid var(--primary);
+
+    &:hover {
+      background: #dddddd;
+    }
+  }
+}

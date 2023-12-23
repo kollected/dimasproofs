@@ -1,0 +1,16 @@
+.Header {
+  position: sticky;
+  border: 1px solid var(--medium-grey);
+  box-shadow: 1px 1px var(--accent);
+  background-color: var(--light-grey);
+  box-sizing: border-box;
+  padding: 1rem 0;
+  width: 100vw;
+  display: flex;
+
+  .Tab {
+    color: var(--primary);
+    padding: 0 2rem;
+    border-right: 1px dotted #9c9c9c;
+  }
+}

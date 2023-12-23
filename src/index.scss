@@ -1,0 +1,64 @@
+// in a bigger project, i'd have used modules to avoid naming issues.
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  background-color: rgba(250, 248, 246, 0.8);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --primary: #3498db;
+  --secondary: #e74c3c;
+  --light-grey: #f3f0f1;
+  --medium-grey: #95a5a6;
+  --dark-grey: #34495e;
+  --accent: #2ecc71;
+  --shake-1: 1px;
+  --shake-2: 2px;
+  --shake-3: 3px;
+  --shake-4: -1px;
+  --shake-5: -2px;
+  --shake-6: -3px;
+  --animation-time: 3s;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+// this is cool and all but not right now
+//@media (prefers-color-scheme: light) {
+//  :root {
+//    color: #213547;
+//    background-color: #ffffff;
+//  }
+//  a:hover {
+//    color: #747bff;
+//  }
+//  button {
+//    background-color: #f9f9f9;
+//  }
+//}

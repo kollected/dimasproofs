@@ -1,0 +1,63 @@
+.Card {
+  flex-basis: 25%;
+  position: relative;
+  background-color: var(--light-grey);
+  border-radius: 1.25rem;
+  padding: 0.5rem 1rem 1rem;
+  box-shadow: 2px 2px var(--accent);
+  background-clip: padding-box;
+  text-align: center;
+  color: var(--dark-grey);
+  border: 1px solid var(--primary);
+
+  &.Clickable {
+    cursor: pointer;
+  }
+
+  h4 {
+    margin: 0.25rem;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(var(--shake-2), var(--shake-1))
+  }
+  10% {
+    transform: translate(var(--shake-4), var(--shake-5))
+  }
+  20% {
+    transform: translate(var(--shake-6), var(--shake-1))
+  }
+  30% {
+    transform: translate(var(--shake-1), var(--shake-2))
+  }
+  40% {
+    transform: translate(var(--shake-1), var(--shake-4))
+  }
+  50% {
+    transform: translate(var(--shake-4), var(--shake-2))
+  }
+  60% {
+    transform: translate(var(--shake-6), var(--shake-1))
+  }
+  70% {
+    transform: translate(var(--shake-2), var(--shake-1))
+  }
+  80% {
+    transform: translate(var(--shake-6), var(--shake-5))
+  }
+  90% {
+    transform: translate(var(--shake-5), var(--shake-2))
+  }
+  100% {
+    transform: translate(var(--shake-2), var(--shake-1))
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  // hey would you look at that i know of cool css selectors like :not /s
+  .Card:not(:hover) {
+    animation: shake infinite var(--animation-time) linear;
+  }
+}

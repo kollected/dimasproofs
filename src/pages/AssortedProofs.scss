@@ -1,0 +1,49 @@
+.Proofs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: start;
+  margin-top: 2rem;
+  gap: 4rem;
+}
+
+// even though you can use a linear-gradient with border-image, it does not respect border-radius.
+// using :after with a mask is a workaround.
+.RainbowBorder {
+  border: none;
+  box-shadow: none;
+
+  &:after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    background: linear-gradient(to right, rgb(237, 34, 36), rgb(243, 91, 34), rgb(249, 150, 33), rgb(245, 193, 30), rgb(241, 235, 27) 27%, rgb(241, 235, 27), rgb(241, 235, 27) 33%, rgb(99, 199, 32), rgb(12, 155, 73), rgb(33, 135, 141), rgb(57, 84, 165), rgb(97, 55, 155), rgb(147, 40, 142));
+    -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    border-radius: 1.25rem;
+  }
+}
+
+@keyframes runningLine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.RunningLine:not(:hover) {
+  overflow: hidden;
+
+  span {
+    display: inline-block;
+    animation: runningLine 5s steps(120, end) infinite;
+  }
+}
