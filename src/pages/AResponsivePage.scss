@@ -1,0 +1,55 @@
+// i am using a different method of declaring css variables here because var doesn't work in media queries.
+//
+// Note: Variables do not work inside media queries and container queries.
+// https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+
+.Main {
+  // slightly bigger than iphone 14 pro max
+  $mobile-breakpoint: 440px;
+  // slightly bigger than ipad air
+  $tablet-breakpoint: 880px;
+
+  .Grey {
+    background: var(--light-grey);
+  }
+
+  .Section {
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem;
+    padding: 1rem 2rem;
+    gap: 2rem;
+
+    img, div {
+      max-width: 550px;
+    }
+
+    .BreakpointFontSize {
+      font-size: 1.25rem;
+
+      @media (max-width: $tablet-breakpoint) {
+        font-size: 1rem;
+      }
+
+      @media (max-width: $mobile-breakpoint) {
+        font-size: 0.75rem;
+      }
+    }
+
+    // obviously, i prefer clamp. fluidity looks nicer and it is literally a single line of css
+
+    .ClampFontSize {
+      font-size: clamp(0.75rem, calc(0.5rem + 1vw), 1.25rem);
+    }
+
+    @media (max-width: $tablet-breakpoint) {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+      margin: 1rem 0;
+      max-width: calc(100vw - 4rem);
+    }
+  }
+}

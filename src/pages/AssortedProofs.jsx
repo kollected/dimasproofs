@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import { createPortal } from 'react-dom'
 
 import { Card, Modal } from '../components'
@@ -10,7 +10,6 @@ const memoized = memo()
 
 export const AssortedProofs = () => {
   const [isModalOpen, setModalOpen] = useState(false)
-  const [additionalCards, setAdditionalCards] = useState([])
 
   const cards = [
     {

@@ -3,10 +3,8 @@
     text-align: left;
     max-width: 40%;
 
-    code {
-      background-color: #f4f4f4;
-      padding: 2px 4px;
-      border: 1px solid #ccc;
+    @media (max-width: 440px) {
+      max-width: unset;
     }
   }
 }

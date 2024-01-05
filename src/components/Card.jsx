@@ -1,14 +1,14 @@
 import React, { useEffect, useRef } from 'react'
+
 import './Card.scss'
 
-export const Card = ({ className: additionalClassName, text, title, onClick }, index) => {
+export const Card = ({ className: additionalClassName, text, onClick }, index) => {
   let className = 'Card'
   if (additionalClassName) className += ` ${additionalClassName}`
   if (onClick) className += ' Clickable'
 
   // this makes each rendered card's animation a bit different.
-  // you can get random values in css as well but that would only randomize the animation for all .Card elements
-  // i wonder if there's a way to do this without js but thought of nothing so far
+  // you can get random values in css (specifically in sass) as well but that would only randomize the animation for all .Card elements
   const getRandomShake = () => Math.floor(Math.random() * 3) + 'px'
   const ref = useRef()
 
@@ -24,7 +24,7 @@ export const Card = ({ className: additionalClassName, text, title, onClick }, i
   return (
     // usually wouldn't use index as key, but i don't intend to add any functionality that would change array element order
     <div className={className} onClick={onClick} key={index} ref={ref}>
-      <h4>{title || `proof #${index + 1}`}</h4>
+      <h4>proof #{index + 1}</h4>
       <span>{text}</span>
     </div>
   )

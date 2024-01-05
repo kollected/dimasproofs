@@ -10,5 +10,6 @@ export const App = () => (
     <div className='PageContainer'>
       <Outlet />
     </div>
+  {/* i should probably add some sorta footer as well*/}
   </>
 )

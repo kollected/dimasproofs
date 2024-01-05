@@ -17,7 +17,7 @@ const navigation = [{
 export const Header = () => (
   <div className='Header'>
     {navigation.map(({ title, to }) => (
-      <Link to={to} className='Tab'>
+      <Link to={to} className='Tab' key={to}>
         {title}
       </Link>
     ))}
