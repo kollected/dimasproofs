@@ -1,17 +1,17 @@
-// i am using a different method of declaring css variables here because var doesn't work in media queries.
-//
-// Note: Variables do not work inside media queries and container queries.
-// https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
-
 .Main {
   // slightly bigger than iphone 14 pro max
   $mobile-breakpoint: 440px;
   // slightly bigger than ipad air
   $tablet-breakpoint: 880px;
 
-  .Grey {
-    background: var(--light-grey);
-  }
+  // i am using a different method of declaring css variables above because var doesn't work in media queries.
+  // ref:
+  // Note: Variables do not work inside media queries and container queries.
+  // https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+
+  container: main / inline-size;
+  // width must be set explicitly for the element to be used as a container
+  width: calc(min(1280px, 100vw) - 4rem);
 
   .Section {
     display: flex;
@@ -19,27 +19,10 @@
     margin: 1rem;
     padding: 1rem 2rem;
     gap: 2rem;
+    background: var(--light-grey);
 
     img, div {
       max-width: 550px;
-    }
-
-    .BreakpointFontSize {
-      font-size: 1.25rem;
-
-      @media (max-width: $tablet-breakpoint) {
-        font-size: 1rem;
-      }
-
-      @media (max-width: $mobile-breakpoint) {
-        font-size: 0.75rem;
-      }
-    }
-
-    // obviously, i prefer clamp. fluidity looks nicer and it is literally a single line of css
-
-    .ClampFontSize {
-      font-size: clamp(0.75rem, calc(0.5rem + 1vw), 1.25rem);
     }
 
     @media (max-width: $tablet-breakpoint) {
@@ -50,6 +33,37 @@
     @media (max-width: $mobile-breakpoint) {
       margin: 1rem 0;
       max-width: calc(100vw - 4rem);
+    }
+  }
+
+  .BreakpointFontSize {
+    font-size: 1.25rem;
+
+    @media (max-width: $tablet-breakpoint) {
+      font-size: 1rem;
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+      font-size: 0.75rem;
+    }
+  }
+
+  // obviously, i prefer clamp. fluidity looks nicer and it is literally a single line of css
+
+  .ClampFontSize {
+    font-size: clamp(0.75rem, calc(0.5rem + 1vw), 1.25rem);
+  }
+
+  // i should probably come up with a better way to showcase container queries.
+  // setting the main element as the container isn't great since it's not that different from the usual viewport stuff
+  .CQFontSize {
+    // cqw is the equivalent container unit of vw
+    font-size: clamp(0.75rem, calc(0.5rem + 1cqw), 1.25rem);
+
+    // using the container name here isn't necessary because i have only one container set up
+    // otherwise, with a deeply nested DOM tree, you can target a specific container
+    @container main (max-width: 500px) {
+      font-weight: 700;
     }
   }
 }

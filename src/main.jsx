@@ -1,11 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
+
 import { App } from './App.jsx'
-import './index.scss'
 import { About, AResponsivePage, AssortedProofs, ErrorPage } from './pages'
 
-console.log('%c welcome to my humble abode', 'color: #3498db; ')
+import './index.scss'
+
+console.log('%cwelcome to my humble abode', 'color: #3498db; ')
 
 const router = createBrowserRouter([{
   path: '',
