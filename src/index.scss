@@ -24,6 +24,16 @@
   --shake-5: -2px;
   --shake-6: -3px;
   --animation-time: 3s;
+
+  // :where is of course completely unnecessary because i know i will have exactly one element for these conditions
+
+  :where(.Card:has(svg)) {
+    background-color: color-mix(in srgb, var(--primary) 20%, transparent);
+
+    svg {
+      margin-left: 2px;
+    }
+  }
 }
 
 body {

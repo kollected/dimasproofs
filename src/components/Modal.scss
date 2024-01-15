@@ -1,3 +1,5 @@
+@import '../mixins';
+
 .ModalBackdrop {
   position: absolute;
   height: 100vh;
@@ -16,12 +18,11 @@
   inset: 50%;
   transform: translate(-50%, -50%);
   padding: 1rem;
-  width: 280px;
-  height: 150px;
-  border: 1px solid var(--primary);
-  border-radius: 1rem;
-  box-shadow: 0.25rem 0.25rem var(--accent);
+  width: 320px;
+  height: 180px;
   background-color: var(--light-grey);
+
+  @include card-border(0.25rem, 1rem);
 
   .Button {
     background: var(--light-grey);

@@ -1,12 +1,25 @@
 .Proofs {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  align-content: start;
-  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 4rem;
+  margin-top: 2rem;
+  align-items: center;
 }
+
+// this also works but is a bit more verbose
+// .Proofs {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-around;
+//   align-items: center;
+//   align-content: start;
+//   margin-top: 2rem;
+//   gap: 4rem;
+//
+//   div {
+//     flex-basis: 25%;
+//   }
+// }
 
 // even though you can use a linear-gradient with border-image, it does not respect border-radius.
 // using :after with a mask is a workaround.

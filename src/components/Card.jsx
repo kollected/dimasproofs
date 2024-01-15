@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 
 import './Card.scss'
 
-export const Card = ({ className: additionalClassName, text, onClick }, index) => {
+export const Card = ({ className: additionalClassName, text, onClick, extraNode }, index) => {
   let className = 'Card'
   if (additionalClassName) className += ` ${additionalClassName}`
   if (onClick) className += ' Clickable'
@@ -26,6 +26,7 @@ export const Card = ({ className: additionalClassName, text, onClick }, index) =
     <div className={className} onClick={onClick} key={index} ref={ref}>
       <h4>proof #{index + 1}</h4>
       <span>{text}</span>
+      {extraNode}
     </div>
   )
 }

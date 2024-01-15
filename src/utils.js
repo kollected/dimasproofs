@@ -1,6 +1,6 @@
 // thanks to arrow function you no longer need to use bind here
 export const debounce = (fn, delay = 3000) => {
-  let timer;
+  let timer
 
   return (...args) => {
     console.log(`clicked at ${new Date().toLocaleTimeString()}, debounce timer reset`)

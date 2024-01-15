@@ -17,7 +17,7 @@ export const AResponsivePage = () => (
           This is normally used to improve loading times by serving different image sizes on different devices. To
           illustrate the point better, I'm just showing two different images.
         </p>
-        <p>This description also moves below the image on mobile.</p>
+        <p>This description also moves below the image on smaller screens.</p>
       </div>
       <picture>
         <source srcSet='/assets/iphone.png' media='(max-width: 440px)' />

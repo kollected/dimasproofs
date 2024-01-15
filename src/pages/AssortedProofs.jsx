@@ -41,8 +41,18 @@ export const AssortedProofs = () => {
       className: 'RainbowBorder'
     },
     {
-      text: 'proof i  can do animations',
+      text: 'proof i can do animations',
       className: 'RunningLine'
+    },
+    {
+      text: 'proof i can use advanced css concepts & methods',
+      // i just needed something to differentiate this card from others for my :where selector, hence the svg
+      extraNode: (
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='16' height='16' fill='none'
+             stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'>
+          <path d='M20 6L9 17 4 12' />
+        </svg>
+      )
     }
   ]
 
