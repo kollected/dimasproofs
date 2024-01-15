@@ -4,7 +4,8 @@ import './About.scss'
 
 export const About = () => (
   <div className='About'>
-    <h3>About</h3>
+    <h2>About</h2>
+    <h3>About this project</h3>
     <p>Hey! My name is Dima, nice to sort of meet you. I'm a frontend developer and since you're here, I'm probably
       looking for work.</p>
     <p>This place right here is essentially my digital resume. It is here for you to get a sense of what I do as a
@@ -13,7 +14,7 @@ export const About = () => (
       a <code>console.log</code> to track various actions. I also left a bunch of comments in the code.</p>
     <p>I would also like to mention that while I take my work seriously, this was done just a bit tongue-in-cheek. Feel
       free to poke around and explore but don't take it too seriously.</p>
-    <h3>My experience</h3>
-
+    <h3>My CV</h3>
+    <a href='/assets/Frontend_developer_CV_Dima_Dyudeev.pdf' target='_blank'>Open CV</a>
   </div>
 )

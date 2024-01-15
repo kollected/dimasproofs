@@ -48,7 +48,7 @@ export const AssortedProofs = () => {
 
   return (
     <>
-      <h3>Assorted proofs</h3>
+      <h2>Assorted proofs</h2>
       <span>This page showcases a few common important skills that didn't make their way into other pages</span>
       <div className='Proofs'>
         {cards.map(Card)}

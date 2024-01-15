@@ -1,0 +1,7 @@
+// proof i know how to use mixins
+
+@mixin card-border($box-shadow, $border-radius) {
+  border: 1px solid var(--primary);
+  box-shadow: $box-shadow $box-shadow var(--accent);
+  border-radius: $border-radius;
+}

@@ -1,14 +1,14 @@
+@import '../mixins';
+
 .Card {
   flex-basis: 25%;
   position: relative;
   background-color: var(--light-grey);
-  border-radius: 1.25rem;
   padding: 0.5rem 1rem 1rem;
-  box-shadow: 2px 2px var(--accent);
-  background-clip: padding-box;
   text-align: center;
   color: var(--dark-grey);
-  border: 1px solid var(--primary);
+
+  @include card-border(2px, 1.25rem);
 
   &.Clickable {
     cursor: pointer;

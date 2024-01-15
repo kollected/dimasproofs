@@ -9,6 +9,7 @@ import './index.scss'
 
 console.log('%cwelcome to my humble abode', 'color: #3498db; ')
 
+// i'm actually much more used to the usual component based routing but i think i like this more
 const router = createBrowserRouter([{
   path: '',
   errorElement: <ErrorPage />,
@@ -30,20 +31,6 @@ const router = createBrowserRouter([{
     element: <AResponsivePage />
   }]
 }])
-
-// const router = createBrowserRouter([{
-//   path: '/',
-//   element: <div>test</div>
-// }, {
-//   path: 'assorted-proofs',
-//   element: <AssortedProofs />
-// }, {
-//   path: 'about',
-//   element: <About />
-// }, {
-//   path: 'a-responsive-page',
-//   element: <div>test responsive page</div>
-// }])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
