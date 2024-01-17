@@ -13,28 +13,32 @@ export const AssortedProofs = () => {
 
   const cards = [
     {
-      text: 'proof i can fetch some data',
-      onClick: () => {
-        console.log('take a look at network too!')
-        fetch('https://jsonplaceholder.typicode.com/todos/1')
-          .then(response => response.json())
-          .then(json => console.log(json))
-      }
-    },
-    {
       text: 'proof i can debounce functions',
       onClick: debounce(() => console.log(`debounced function fired at ${new Date().toLocaleTimeString()}`))
     },
     {
       text: 'proof i know what memo is',
       onClick: () => {
-        const valueOnClick = [5, 13, 11, 7][Math.floor(Math.random() * 2)]
+        const valueOnClick = [5, 13, 11, 7][Math.floor(Math.random() * 4)]
         console.log('value on click:', valueOnClick, 'result:', memoized(valueOnClick))
       }
     },
     {
       text: 'proof i can show a modal',
       onClick: () => setModalOpen((c) => !c)
+    },
+    {
+      text: 'proof i can fetch some data',
+      onClick: async () => {
+        console.log('%ctake a look at network too!', 'color: #2ecc71;')
+        try {
+          const response = await fetch('/api/hello')
+          const { message } = await response.json()
+          console.log(message)
+        } catch (e) {
+          console.error('please start the server with node src/server.cjs')
+        }
+      }
     },
     {
       text: 'proof i can make a rainbow border on a rounded div',
